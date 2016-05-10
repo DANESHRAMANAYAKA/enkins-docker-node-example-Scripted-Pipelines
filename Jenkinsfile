@@ -7,7 +7,6 @@ node {
   stage 'Build'
 
   docker.build('jenkins-docker-node:latest').inside {
-    sh 'source ~/.nvm/nvm.sh && nvm install 0.12' 
     sh 'node --version'
     sh 'npm install'         
   }
