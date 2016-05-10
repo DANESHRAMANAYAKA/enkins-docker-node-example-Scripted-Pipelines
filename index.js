@@ -1,11 +1,15 @@
-var express = require("express"),
-    nano = require('nano')('http://localhost:5984'),
-    app = express();
+'use strict';
 
-app.get("/", function (req, res) {
-  res.send("Hey buddy!");
+const express = require('express');
+
+// Constants
+const PORT = 3000;
+
+// App
+const app = express();
+app.get('/', function (req, res) {
+  res.send('Hello world\n');
 });
 
-app.listen(3000, function () {
-  console.log('Express listening on port 3000');
-});
+app.listen(PORT);
+console.log('Running on http://localhost:' + PORT);
