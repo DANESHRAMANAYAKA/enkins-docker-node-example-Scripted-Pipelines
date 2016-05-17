@@ -16,13 +16,12 @@ node {
   stage 'Package Docker image'
 
   // Build final image using our Dockerfile
-  def img = docker.build('jenkins-docker-node-example:latest', '.')
+  def img = docker.build('kulinski/jenkins-docker-node-example:latest', '.')
 
-        // Let's tag and push the newly built image. Will tag using the image name provided
-        // in the 'docker.build' call above (which included the build number on the tag).
-        //pcImg.push();
-    
-   stage name: 'Deploy Image', concurrency: 1
-        // All the tests passed. We can now retag and push the 'latest' image
-   //     pcImg.push('latest');    
+  stage 'Publish'
+  // Leave the first parameter blank to use DockerHub
+  docker.withRegistry('', 'kulinski-dockerhub') {
+       img.push('latest')
+  }
+
 }
