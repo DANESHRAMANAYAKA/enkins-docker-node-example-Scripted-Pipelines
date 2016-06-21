@@ -19,9 +19,8 @@ node {
   def img = docker.build('kulinski/jenkins-docker-node-example:latest', '.')
 
   stage 'Publish'
-  // Leave the first parameter blank to use DockerHub
-  docker.withRegistry('', 'kulinski-dockerhub') {
-       img.push('latest')
+  docker.withRegistry('https://nexus.doyouevenco.de', 'nexus-admin') {
+     img.push('latest')
   }
 
 }
