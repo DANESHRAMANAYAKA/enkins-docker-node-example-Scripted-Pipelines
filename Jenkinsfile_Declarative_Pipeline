@@ -11,7 +11,7 @@ pipeline {
         stage('Package Docker image') {
             steps { 
                   //def img = docker.build('kulinski/jenkins-docker-node-example:latest', '.')
-                  sh "docker build -t kulinski/jenkins-docker-node-example-Declarative_Pipeline:latest"
+                  sh "docker build -t kulinski/jenkins-docker-node-example-peclarative_pipeline:latest"
             }
         }
     }
