@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps { 
-                  git 'https://github.com/kulinski/jenkins-docker-node-example.git'
+                  //git 'https://github.com/kulinski/jenkins-docker-node-example.git'
+                  sh 'ls -ltrh'
                   
 
             }
