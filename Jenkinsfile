@@ -18,9 +18,9 @@ node {
   // Build final image using our Dockerfile
   def img = docker.build('kulinski/jenkins-docker-node-example:latest', '.')
 
-  stage 'Publish'
-  docker.withRegistry('https://nexus.doyouevenco.de', 'nexus-admin') {
-     img.push('latest')
-  }
+//  stage 'Publish'
+//  docker.withRegistry('https://nexus.doyouevenco.de', 'nexus-admin') {
+//     img.push('latest')
+//  }
 
 }
