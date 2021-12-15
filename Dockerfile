@@ -1,4 +1,4 @@
-FROM DANESHRAMANAYAKA/alpine-node:6.1.0
+FROM daneshramanayaka/alpine-node:6.1.0
 
 # Create app directory
 RUN mkdir -p /app
